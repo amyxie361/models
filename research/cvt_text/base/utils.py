@@ -19,7 +19,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import cPickle
+#import cPickle
+import pickle
 import sys
 import tensorflow as tf
 
@@ -41,7 +42,7 @@ def load_cpickle(path, memoized=True):
 
 def _load_cpickle(path):
   with tf.gfile.GFile(path, 'r') as f:
-    return cPickle.load(f)
+    return pickle.load(f)
 
 
 @Memoize
